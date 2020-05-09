@@ -1,0 +1,16 @@
+---
+- name: Install Nginx on Ubuntu
+  apt:
+    name: "{{ packageName }}"
+    state: present
+  when:  ansible_os_family == "Debian"
+  notify:
+    - Start Nginx
+
+- name: Install Nginx on Ubuntu
+  yum:
+    name: "{{ packageName }}"
+    state: present
+  when:  ansible_os_family == "RedHat"
+  notify:
+    - Start Nginx

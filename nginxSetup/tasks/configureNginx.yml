@@ -1,0 +1,8 @@
+---
+- name: Configuring Nginx website
+  lineinfile:
+    path: "{{ nginxPath }}"
+    regexp: '<h1>Welcome to nginx!</h1>'
+    line: <h1>Hi I am a fresher and my name is {{ fresherName }}</h1>
+  notify:
+    - Restart Nginx

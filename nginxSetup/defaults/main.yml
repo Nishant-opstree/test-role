@@ -1,0 +1,5 @@
+---
+# defaults file for nginxSetup
+packageName: nginx
+nginxPath: /var/www/html/index.nginx-debian.html
+fresherName: Default
