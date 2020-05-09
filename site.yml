@@ -1,5 +1,5 @@
 ---
-- hosts: Master
+- hosts: all
   become: true
   roles:
     - nginxSetup
