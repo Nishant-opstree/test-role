@@ -1,0 +1,10 @@
+- hosts: all
+  become: true
+  tasks:
+    - name: install nginx on debian or ubuntu instances
+      apt: name=nginx state=present
+      when: ansible_os_family == "Debian"
+
+    - name: enable nginx on startup and start service for debian or ubuntu
+      service: name=nginx enabled=yes state=started
+      when: ansible_os_family == "Debian"
